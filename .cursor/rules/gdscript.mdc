@@ -1,0 +1,14 @@
+---
+description: GDScript style for Lantern Hollow
+globs: "**/*.gd"
+alwaysApply: false
+---
+
+# GDScript
+
+- Godot 4 typed signatures (`-> void`, typed params).
+- Indent with tabs.
+- Movement on `CharacterBody2D` uses `velocity` + `move_and_slide()` in `_physics_process`.
+- Tune gameplay numbers with `@export`.
+- One script responsibility. Player does not own HUD or win screens.
+- Use Input actions (`move_left`, `dash`, …), not raw keycodes.

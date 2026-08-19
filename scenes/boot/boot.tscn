@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/boot/boot.gd" id="1_boot"]
+
+[node name="Boot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_boot")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078, 0.055, 0.106, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Copy" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/Copy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957, 0.827, 0.369, 1)
+theme_override_font_sizes/font_size = 16
+text = "LANTERN HOLLOW"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Copy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.7, 0.62, 1)
+theme_override_font_sizes/font_size = 8
+text = "a small vertical slice"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Center/Copy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.5, 0.45, 1)
+theme_override_font_sizes/font_size = 8
+text = "Press Enter or E to walk"
+horizontal_alignment = 1

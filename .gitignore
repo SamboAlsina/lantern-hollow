@@ -1,0 +1,25 @@
+# Godot 4 generated files
+.godot/
+.import/
+*.translation
+
+# Exports (binaries, not presets)
+export/*.zip
+export/*.apk
+export/*.aab
+export/*.exe
+export/*.dmg
+export/*.app
+export/*.pck
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / AI local noise
+*.swp
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.tmp
+*~

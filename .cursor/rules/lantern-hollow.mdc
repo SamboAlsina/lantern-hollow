@@ -1,0 +1,15 @@
+---
+description: Lantern Hollow project lead rules for Cursor and Codex
+alwaysApply: true
+---
+
+# Lantern Hollow
+
+Two brothers learning Godot 4.7 GDScript. Ship a small vertical slice, not a large game.
+
+- Project root is this folder (`project.godot`).
+- Work one milestone from `docs/PLAN.md`. Do not build the whole game.
+- Teach as you go. Prefer the editor for scenes/tiles/collision/UI; GDScript for rules over time.
+- Typed GDScript, tabs, colocated `.tscn` + `.gd`.
+- Keep `docs/SESSION_LOG.md` current when a sitting finishes work.
+- Ask only when a choice blocks play or changes the design (e.g. lantern fuel vs toggle at Milestone 4).
