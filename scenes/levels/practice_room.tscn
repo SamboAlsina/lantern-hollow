@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=4 uid="uid://cr03h2in38ju"]
 
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://cq80ou1ugo5ot" path="res://assets/tiles/hollow_tiles.png" id="2_dtm2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h"]
 size = Vector2(320, 8)
@@ -11,74 +12,84 @@ size = Vector2(8, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_block"]
 size = Vector2(24, 24)
 
-[node name="PracticeRoom" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a1fb"]
+texture = ExtResource("2_dtm2k")
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[node name="Floor" type="ColorRect" parent="."]
+[sub_resource type="TileSet" id="TileSet_bjm4n"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4a1fb")
+
+[node name="PracticeRoom" type="Node2D" unique_id=1006677623]
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1022091654]
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.145, 0.11, 0.165, 1)
 
-[node name="WallVisuals" type="Node2D" parent="."]
+[node name="WallVisuals" type="Node2D" parent="." unique_id=960663775]
 
-[node name="Top" type="ColorRect" parent="WallVisuals"]
+[node name="Top" type="ColorRect" parent="WallVisuals" unique_id=1512355871]
 offset_right = 320.0
 offset_bottom = 8.0
 color = Color(0.22, 0.16, 0.12, 1)
 
-[node name="Bottom" type="ColorRect" parent="WallVisuals"]
+[node name="Bottom" type="ColorRect" parent="WallVisuals" unique_id=2013066075]
 offset_top = 172.0
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.22, 0.16, 0.12, 1)
 
-[node name="Left" type="ColorRect" parent="WallVisuals"]
+[node name="Left" type="ColorRect" parent="WallVisuals" unique_id=1568104456]
 offset_right = 8.0
 offset_bottom = 180.0
 color = Color(0.22, 0.16, 0.12, 1)
 
-[node name="Right" type="ColorRect" parent="WallVisuals"]
+[node name="Right" type="ColorRect" parent="WallVisuals" unique_id=646519544]
 offset_left = 312.0
 offset_right = 320.0
 offset_bottom = 180.0
 color = Color(0.22, 0.16, 0.12, 1)
 
-[node name="Block" type="ColorRect" parent="WallVisuals"]
+[node name="Block" type="ColorRect" parent="WallVisuals" unique_id=1873878883]
 offset_left = 228.0
 offset_top = 78.0
 offset_right = 252.0
 offset_bottom = 102.0
 color = Color(0.35, 0.22, 0.16, 1)
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=209651073]
 
-[node name="Top" type="CollisionShape2D" parent="Walls"]
+[node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1885428486]
 position = Vector2(160, 4)
 shape = SubResource("RectangleShape2D_h")
 
-[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+[node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=290366530]
 position = Vector2(160, 176)
 shape = SubResource("RectangleShape2D_h")
 
-[node name="Left" type="CollisionShape2D" parent="Walls"]
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=894029523]
 position = Vector2(4, 90)
 shape = SubResource("RectangleShape2D_v")
 
-[node name="Right" type="CollisionShape2D" parent="Walls"]
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=1774718674]
 position = Vector2(316, 90)
 shape = SubResource("RectangleShape2D_v")
 
-[node name="Block" type="CollisionShape2D" parent="Walls"]
+[node name="Block" type="CollisionShape2D" parent="Walls" unique_id=770126817]
 position = Vector2(240, 90)
 shape = SubResource("RectangleShape2D_block")
 
-[node name="Player" parent="." instance=ExtResource("1_player")]
+[node name="Player" parent="." unique_id=1144507312 instance=ExtResource("1_player")]
 position = Vector2(80, 90)
+move_speed = 400.0
+acceleration = 300.0
+friction = 10.0
+wall_bounce_speed = 100.0
+wall_recover_time = 0.01
 
-[node name="Hint" type="Label" parent="."]
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 308.0
-offset_bottom = 28.0
-theme_override_colors/font_color = Color(0.75, 0.7, 0.62, 1)
-theme_override_font_sizes/font_size = 8
-text = "Stop Play, press Play again  ·  walk, then ram a wall"
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=541399923]
+tile_map_data = PackedByteArray("AAAIAAEAAAABAAAAAAAJAAEAAAABAAAAAAAKAAEAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAALAAMAAAABAAAAAAALAAQAAAABAAAAAAAKAAQAAAABAAAAAAAKAAUAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_bjm4n")
